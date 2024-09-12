@@ -17,7 +17,7 @@ def fetch_new_batch():
         time_interval = timedelta(hours=24)
         if datetime.now() - last_exec_time < time_interval:
             print("It's too soon, son.")
-            print("Time since last fetch: ",(datetime.now() - last_exec_time))
+            print("Time since last fetch: ", (datetime.now() - last_exec_time))
             print("Ideally keep fetches to once per day")
             sys.exit()
             return
@@ -58,7 +58,7 @@ def parse(PS):
     Theme = PS[6].text
     
     
-    row =[SrNo,Organisation,Title,Category, PSno, Submissions,Theme, datetime.now().strftime("%Y-%m-%d %H:%M:%S")]
+    row =[SrNo,Organisation,Title,Category, PSno, Submissions,Theme, datetime.now().strftime("%Y-%m-%d %H:%M:%S")] #adding a timestamp so I can drill down in power BI
     
     # print(row)
     return row
